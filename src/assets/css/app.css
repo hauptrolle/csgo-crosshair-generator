@@ -104,3 +104,10 @@ body {
   margin-left: 10px;
   border-radius: 3px;
 }
+
+.crosshair-preview {
+  width: 100%;
+  background: url(../images/dust2.jpg);
+  background-size: cover;
+  height: 400px;
+}

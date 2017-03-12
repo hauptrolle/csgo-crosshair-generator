@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import './app.css';
+import './assets/css/app.css';
 import { setConfig, loadPreset } from './ducks/config';
 
 import Slider from './components/Slider';
@@ -10,6 +10,7 @@ import Toggle from './components/Toggle';
 import CrosshairColor from './components/CrosshairColor';
 import CustomColor from './components/CustomColor';
 import Presets from './components/Presets';
+import CrosshairPreview from './components/CrosshairPreview';
 
 const propTypes = {
   config: PropTypes.object.isRequired,
@@ -108,6 +109,8 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction }) => (
     <Presets
       onClick={loadPresetAction}
     />
+
+    <CrosshairPreview config={config} />
 
     {/* Debugging */}
     <pre>
