@@ -2,7 +2,8 @@
 
 > A crosshair generator for Counter-Strike:Global Offensive build with react
 
-Roadmap:
+Features:
 - [x] Easy customize your crosshair
 - [ ] Crosshair displayed on CS:GO Background
-- [ ] Choose preset from CS:GO Pro Players
+- [x] Choose preset from CS:GO Pro Players
+  - Add more presets
