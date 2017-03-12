@@ -12,11 +12,9 @@ const Toggle = ({ name, label, value, onClick, isActive }) => (
   <div className="row-wrapper">
     <div className="label">{label}:</div>
     <button
-      className={`button ${isActive ? 'button-active' : ''}`}
+      className={`toggle ${isActive ? 'toggle-active' : ''}`}
       onClick={() => onClick({ [name]: (value === '0' ? '1' : '0') })}
-    >
-      {label}
-    </button>
+    />
   </div>
 );
 
