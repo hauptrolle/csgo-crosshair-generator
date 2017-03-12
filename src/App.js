@@ -27,6 +27,34 @@ const App = ({ config, setConfigAction, activeColor }) => (
       defaultValue={parseInt(config.cl_crosshairalpha, 10)}
     />
 
+    <Slider
+      name="cl_crosshairthickness"
+      label="Thickness"
+      onChange={setConfigAction}
+      min={0}
+      max={100}
+      step={0.5}
+      defaultValue={parseInt(config.cl_crosshairthickness, 10)}
+    />
+
+    <Slider
+      name="cl_crosshairsize"
+      label="Size"
+      onChange={setConfigAction}
+      min={0}
+      max={100}
+      defaultValue={parseInt(config.cl_crosshairsize, 10)}
+    />
+
+    <Slider
+      name="cl_fixedcrosshairgap"
+      label="Gap"
+      onChange={setConfigAction}
+      min={-100}
+      max={100}
+      defaultValue={parseInt(config.cl_fixedcrosshairgap, 10)}
+    />
+
     <CrosshairColor
       setConfigAction={setConfigAction}
       activeColor={activeColor}

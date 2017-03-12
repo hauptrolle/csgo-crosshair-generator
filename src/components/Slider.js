@@ -8,16 +8,22 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
+  step: PropTypes.number.isRequired,
   defaultValue: PropTypes.number.isRequired,
 };
 
-const Slider = ({ name, label, onChange, min, max, defaultValue }) => {
+const defaultProps = {
+  step: 1,
+};
+
+const Slider = ({ name, label, onChange, min, max, step, defaultValue }) => {
   return (
     <div className="row-wrapper">
       <div className="label">{label}:</div>
       <RCSlider
         min={min}
         max={max}
+        step={step}
         defaultValue={defaultValue}
         onChange={value => onChange({ [name]: value.toString() })}
       />
@@ -25,5 +31,6 @@ const Slider = ({ name, label, onChange, min, max, defaultValue }) => {
   );
 };
 
+Slider.defaultProps = defaultProps;
 Slider.propTypes = propTypes;
 export default Slider;
