@@ -1,5 +1,28 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.app {
+  max-width: 960px;
+  margin: 20px auto;
+}
+
+.slider-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.slider-wrapper .label {
+  margin-right: 20px;
+  flex: 1 0 150px;
 }
