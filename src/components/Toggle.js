@@ -8,19 +8,17 @@ const propTypes = {
   isActive: PropTypes.bool.isRequired,
 };
 
-const Toggle = ({ name, label, value, onClick, isActive }) => {
-  return (
-    <div className="row-wrapper">
-      <div className="label">{label}</div>
-      <button
-        className={`button ${isActive ? 'button-active' : ''}`}
-        onClick={() => onClick({ [name]: (value === '0' ? '1' : '0') })}
-      >
-        {label}
-      </button>
-    </div>
-  );
-};
+const Toggle = ({ name, label, value, onClick, isActive }) => (
+  <div className="row-wrapper">
+    <div className="label">{label}</div>
+    <button
+      className={`button ${isActive ? 'button-active' : ''}`}
+      onClick={() => onClick({ [name]: (value === '0' ? '1' : '0') })}
+    >
+      {label}
+    </button>
+  </div>
+);
 
 Toggle.propTypes = propTypes;
 export default Toggle;

@@ -18,21 +18,19 @@ const defaultProps = {
   disable: false,
 };
 
-const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled }) => {
-  return (
-    <div className="row-wrapper">
-      <div className="label">{label}:</div>
-      <RCSlider
-        disabled={disabled}
-        min={min}
-        max={max}
-        step={step}
-        defaultValue={defaultValue}
-        onChange={value => onChange({ [name]: value.toString() })}
-      />
-    </div>
-  );
-};
+const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled }) => (
+  <div className="row-wrapper">
+    <div className="label">{label}:</div>
+    <RCSlider
+      disabled={disabled}
+      min={min}
+      max={max}
+      step={step}
+      defaultValue={defaultValue}
+      onChange={value => onChange({ [name]: value.toString() })}
+    />
+  </div>
+);
 
 Slider.defaultProps = defaultProps;
 Slider.propTypes = propTypes;
