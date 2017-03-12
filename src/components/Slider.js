@@ -15,7 +15,7 @@ const propTypes = {
 
 const defaultProps = {
   step: 1,
-  disable: false,
+  disabled: false,
 };
 
 const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled }) => (
