@@ -21,6 +21,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 5px 0;
 }
 
 .row-wrapper .label {
@@ -46,4 +47,19 @@ body {
 .button-active {
   border-color: #abe2fb;
   color: #abe2fb;
+}
+
+.custom-color {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-color-slider {
+  width: 100%;
+}
+
+.custom-color-preview {
+  background: orange;
+  flex: 1 0 80px;
+  margin-left: 10px;
 }

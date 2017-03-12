@@ -4,8 +4,10 @@ import { bindActionCreators } from 'redux';
 
 import './app.css';
 import { setConfig } from './ducks/config';
+
 import Slider from './components/Slider';
 import CrosshairColor from './components/CrosshairColor';
+import CustomColor from './components/CustomColor';
 
 const propTypes = {
   config: PropTypes.object.isRequired,
@@ -29,6 +31,8 @@ const App = ({ config, setConfigAction, activeColor }) => (
       setConfigAction={setConfigAction}
       activeColor={activeColor}
     />
+
+    {activeColor === '5' && <CustomColor onChange={setConfigAction} />}
 
     {/* Debugging */}
     <pre>
