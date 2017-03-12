@@ -24,7 +24,7 @@ const App = ({ config, setConfigAction, activeColor }) => (
       onChange={setConfigAction}
       min={0}
       max={255}
-      defaultValue={200}
+      defaultValue={parseInt(config.cl_crosshairalpha, 10)}
     />
 
     <CrosshairColor
@@ -32,7 +32,12 @@ const App = ({ config, setConfigAction, activeColor }) => (
       activeColor={activeColor}
     />
 
-    {activeColor === '5' && <CustomColor onChange={setConfigAction} />}
+    {activeColor === '5' &&
+      <CustomColor
+        config={config}
+        onChange={setConfigAction}
+      />
+    }
 
     {/* Debugging */}
     <pre>

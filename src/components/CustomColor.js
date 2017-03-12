@@ -3,10 +3,11 @@ import React, { PropTypes } from 'react';
 import Slider from './Slider';
 
 const propTypes = {
+  config: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
-const CustomColor = ({ onChange }) => (
+const CustomColor = ({ config, onChange }) => (
   <div className="custom-color">
     <div className="custom-color-slider">
       <Slider
@@ -15,7 +16,7 @@ const CustomColor = ({ onChange }) => (
         onChange={onChange}
         min={0}
         max={255}
-        defaultValue={50}
+        defaultValue={parseInt(config.cl_crosshaircolor_r, 10)}
       />
       <Slider
         name="cl_crosshaircolor_g"
@@ -23,7 +24,7 @@ const CustomColor = ({ onChange }) => (
         onChange={onChange}
         min={0}
         max={255}
-        defaultValue={250}
+        defaultValue={parseInt(config.cl_crosshaircolor_g, 10)}
       />
       <Slider
         name="cl_crosshaircolor_b"
@@ -31,7 +32,7 @@ const CustomColor = ({ onChange }) => (
         onChange={onChange}
         min={0}
         max={255}
-        defaultValue={50}
+        defaultValue={parseInt(config.cl_crosshaircolor_b, 10)}
       />
     </div>
     <div className="custom-color-preview">
