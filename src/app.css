@@ -59,7 +59,7 @@ body {
 }
 
 .custom-color-preview {
-  background: orange;
   flex: 1 0 80px;
   margin-left: 10px;
+  border-radius: 3px;
 }

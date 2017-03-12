@@ -7,6 +7,13 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
+const getPreviewColor = (config) => {
+  const r = parseInt(config.cl_crosshaircolor_r, 10);
+  const g = parseInt(config.cl_crosshaircolor_g, 10);
+  const b = parseInt(config.cl_crosshaircolor_b, 10);
+  return `rgb(${r}, ${g}, ${b})`;
+};
+
 const CustomColor = ({ config, onChange }) => (
   <div className="custom-color">
     <div className="custom-color-slider">
@@ -35,9 +42,7 @@ const CustomColor = ({ config, onChange }) => (
         defaultValue={parseInt(config.cl_crosshaircolor_b, 10)}
       />
     </div>
-    <div className="custom-color-preview">
-      preview
-    </div>
+    <div className="custom-color-preview" style={{ backgroundColor: getPreviewColor(config) }} />
   </div>
 );
 
