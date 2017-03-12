@@ -10,17 +10,20 @@ const propTypes = {
   max: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired,
   defaultValue: PropTypes.number.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };
 
 const defaultProps = {
   step: 1,
+  disable: false,
 };
 
-const Slider = ({ name, label, onChange, min, max, step, defaultValue }) => {
+const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled }) => {
   return (
     <div className="row-wrapper">
       <div className="label">{label}:</div>
       <RCSlider
+        disabled={disabled}
         min={min}
         max={max}
         step={step}

@@ -6,6 +6,7 @@ import './app.css';
 import { setConfig } from './ducks/config';
 
 import Slider from './components/Slider';
+import Toggle from './components/Toggle';
 import CrosshairColor from './components/CrosshairColor';
 import CustomColor from './components/CustomColor';
 
@@ -18,7 +19,16 @@ const propTypes = {
 const App = ({ config, setConfigAction, activeColor }) => (
   <div className="app">
     <h1>CSGO Crosshair Generator</h1>
+    <Toggle
+      name="cl_crosshairusealpha"
+      label="Use Alpha"
+      onClick={setConfigAction}
+      value={config.cl_crosshairusealpha}
+      isActive={config.cl_crosshairusealpha === '1'}
+    />
+
     <Slider
+      disabled={config.cl_crosshairusealpha === '0'}
       name="cl_crosshairalpha"
       label="Alpha"
       onChange={setConfigAction}
@@ -55,9 +65,35 @@ const App = ({ config, setConfigAction, activeColor }) => (
       defaultValue={parseInt(config.cl_fixedcrosshairgap, 10)}
     />
 
+    <Toggle
+      name="cl_crosshair_outline_draw"
+      label="Draw Outline"
+      onClick={setConfigAction}
+      value={config.cl_crosshair_outline_draw}
+      isActive={config.cl_crosshair_outline_draw === '1'}
+    />
+
+    <Slider
+      disabled={config.cl_crosshair_outline_draw === '0'}
+      name="cl_crosshair_outline"
+      label="Outline"
+      onChange={setConfigAction}
+      min={0}
+      max={3}
+      defaultValue={parseInt(config.cl_crosshair_outline, 10)}
+    />
+
     <CrosshairColor
       setConfigAction={setConfigAction}
       activeColor={activeColor}
+    />
+
+    <Toggle
+      name="cl_crosshairdot"
+      label="Dot"
+      onClick={setConfigAction}
+      value={config.cl_crosshairdot}
+      isActive={config.cl_crosshairdot === '1'}
     />
 
     {activeColor === '5' &&
