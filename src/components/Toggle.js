@@ -10,7 +10,7 @@ const propTypes = {
 
 const Toggle = ({ name, label, value, onClick, isActive }) => (
   <div className="row-wrapper">
-    <div className="label">{label}</div>
+    <div className="label">{label}:</div>
     <button
       className={`button ${isActive ? 'button-active' : ''}`}
       onClick={() => onClick({ [name]: (value === '0' ? '1' : '0') })}
