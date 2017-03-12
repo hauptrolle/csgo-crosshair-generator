@@ -1,22 +1,24 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import './app.css';
-import reducers from './ducks';
 
-const store = createStore(
-  reducers,
-  composeWithDevTools(),
+const propTypes = {
+  config: PropTypes.object.isRequired,
+};
+
+const App = ({ config }) => (
+  <div className="app">
+    <h1>CSGO Crosshair Generator</h1>
+    <pre>
+      {JSON.stringify(config, null, 2)}
+    </pre>
+  </div>
 );
 
-const App = () => (
-  <Provider store={store}>
-    <div className="app">
-      <h1>CSGO Crosshair Generator</h1>
-    </div>
-  </Provider>
-);
+const mapStateToProps = state => ({
+  config: state.config,
+});
 
-export default App;
+App.propTypes = propTypes;
+export default connect(mapStateToProps, undefined)(App);
