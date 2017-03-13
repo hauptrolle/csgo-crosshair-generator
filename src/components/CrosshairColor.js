@@ -1,13 +1,15 @@
-import React, { PropTypes } from 'react';
+// @flow
+
+import React from 'react';
 
 import Button from './Button';
 
-const propTypes = {
-  setConfigAction: PropTypes.func.isRequired,
-  activeColor: PropTypes.string.isRequired,
+type Props = {
+  setConfigAction: Function,
+  activeColor: string,
 };
 
-const CrosshairColor = ({ setConfigAction, activeColor }) => (
+const CrosshairColor = ({ setConfigAction, activeColor } : Props) => (
   <div className="row-wrapper">
     <div className="label">Color: </div>
     <Button
@@ -48,5 +50,4 @@ const CrosshairColor = ({ setConfigAction, activeColor }) => (
   </div>
 );
 
-CrosshairColor.propTypes = propTypes;
 export default CrosshairColor;

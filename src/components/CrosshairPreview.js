@@ -1,13 +1,15 @@
-import React, { PropTypes } from 'react';
+// @flow
+
+import React from 'react';
 import { Layer, Rect, Stage, Group } from 'react-konva';
 
 import { getPreviewColor } from '../helpers/color';
 
-const propTypes = {
-  config: PropTypes.object.isRequired,
+type Props = {
+  config: Object
 };
 
-const CrosshairPreview = ({ config }) => (
+const CrosshairPreview = ({ config } : Props) => (
   <div className="crosshair-preview">
     <Stage width={960} height={400}>
       <Layer>
@@ -26,5 +28,4 @@ const CrosshairPreview = ({ config }) => (
   </div>
 );
 
-CrosshairPreview.propTypes = propTypes;
 export default CrosshairPreview;

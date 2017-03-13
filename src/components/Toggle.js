@@ -1,14 +1,16 @@
-import React, { PropTypes } from 'react';
+// @flow
 
-const propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  isActive: PropTypes.bool.isRequired,
+import React from 'react';
+
+type Props = {
+  name: string,
+  label: string,
+  value: string,
+  onClick: Function,
+  isActive: boolean,
 };
 
-const Toggle = ({ name, label, value, onClick, isActive }) => (
+const Toggle = ({ name, label, value, onClick, isActive } : Props) => (
   <div className="row-wrapper">
     <div className="label">{label}:</div>
     <button
@@ -18,5 +20,4 @@ const Toggle = ({ name, label, value, onClick, isActive }) => (
   </div>
 );
 
-Toggle.propTypes = propTypes;
 export default Toggle;

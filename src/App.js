@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react';
+// @flow
+
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -12,14 +14,14 @@ import CustomColor from './components/CustomColor';
 import Presets from './components/Presets';
 import CrosshairPreview from './components/CrosshairPreview';
 
-const propTypes = {
-  config: PropTypes.object.isRequired,
-  setConfigAction: PropTypes.func.isRequired,
-  loadPresetAction: PropTypes.func.isRequired,
-  activeColor: PropTypes.string.isRequired,
+type Props = {
+  config: Object,
+  setConfigAction: Function,
+  loadPresetAction: Function,
+  activeColor: string,
 };
 
-const App = ({ config, setConfigAction, activeColor, loadPresetAction }) => (
+const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props) => (
   <div className="app">
     <h1>CSGO Crosshair Generator</h1>
     <Toggle
@@ -129,5 +131,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   loadPresetAction: loadPreset,
 }, dispatch);
 
-App.propTypes = propTypes;
 export default connect(mapStateToProps, mapDispatchToProps)(App);

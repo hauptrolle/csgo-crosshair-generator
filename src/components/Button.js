@@ -1,18 +1,20 @@
-import React, { PropTypes } from 'react';
+// @flow
 
-const propTypes = {
-  label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  isActive: PropTypes.bool,
+import React from 'react';
+
+type Props = {
+    label: string,
+    name: string,
+    value: string,
+    onClick: Function,
+    isActive: boolean,
 };
 
 const defaultProps = {
   isActive: false,
 };
 
-const Button = ({ label, name, value, onClick, isActive }) => (
+const Button = ({ label, name, value, onClick, isActive } : Props) => (
   <button
     className={`button ${isActive ? 'button-active' : ''}`}
     onClick={() => onClick({ [name]: value })}
@@ -22,5 +24,4 @@ const Button = ({ label, name, value, onClick, isActive }) => (
 );
 
 Button.defaultProps = defaultProps;
-Button.propTypes = propTypes;
 export default Button;

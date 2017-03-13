@@ -1,14 +1,16 @@
-import React, { PropTypes } from 'react';
+// @flow
+
+import React from 'react';
 
 import Slider from './Slider';
 import { getPreviewColor } from '../helpers/color';
 
-const propTypes = {
-  config: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
+type Props = {
+  config: Object,
+  onChange: Function,
 };
 
-const CustomColor = ({ config, onChange }) => (
+const CustomColor = ({ config, onChange } : Props) => (
   <div className="custom-color">
     <div className="custom-color-slider">
       <Slider
@@ -39,7 +41,5 @@ const CustomColor = ({ config, onChange }) => (
     <div className="custom-color-preview" style={{ backgroundColor: getPreviewColor(config) }} />
   </div>
 );
-
-CustomColor.propTypes = propTypes;
 
 export default CustomColor;

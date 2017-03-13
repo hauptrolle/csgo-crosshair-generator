@@ -1,16 +1,18 @@
-import React, { PropTypes } from 'react';
+// @flow
+
+import React from 'react';
 import RCSlider from 'rc-slider/lib/Slider';
 import 'rc-slider/assets/index.css';
 
-const propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  min: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  step: PropTypes.number.isRequired,
-  defaultValue: PropTypes.number.isRequired,
-  disabled: PropTypes.bool.isRequired,
+type Props = {
+  name: string,
+  label: string,
+  onChange: Function,
+  min: number,
+  max: number,
+  step?: number,
+  defaultValue: string | number,
+  disabled?: boolean,
 };
 
 const defaultProps = {
@@ -18,7 +20,7 @@ const defaultProps = {
   disabled: false,
 };
 
-const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled }) => (
+const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled } : Props) => (
   <div className="row-wrapper">
     <div className="label">{label}:</div>
     <RCSlider
@@ -33,5 +35,4 @@ const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled 
 );
 
 Slider.defaultProps = defaultProps;
-Slider.propTypes = propTypes;
 export default Slider;

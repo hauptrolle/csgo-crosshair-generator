@@ -1,13 +1,15 @@
-import React, { PropTypes } from 'react';
+// @flow
+
+import React from 'react';
 import * as presets from '../presets';
 
-const propTypes = {
-  onClick: PropTypes.func.isRequired,
+type Props = {
+  onClick: Function,
 };
 
 const presetArray = Object.keys(presets).map(p => presets[p]);
 
-const Presets = ({ onClick }) => (
+const Presets = ({ onClick } : Props) => (
   <div className="row-wrapper">
     <div className="label">Load Preset:</div>
     <div>
@@ -26,5 +28,4 @@ const Presets = ({ onClick }) => (
   </div>
 );
 
-Presets.propTypes = propTypes;
 export default Presets;
