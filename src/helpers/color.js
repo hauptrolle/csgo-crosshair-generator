@@ -1,23 +1,28 @@
 export const getPreviewColor = (config) => {
-  // Todo: add alpha chanel based on cl_crosshairalpha
+  let alpha = (config.cl_crosshairalpha / 255);
+
+  if (config.cl_crosshairusealpha === '0') {
+    alpha = 1;
+  }
+
   if (config.cl_crosshaircolor === '1') {
-    return 'rgb(0, 255, 0)';
+    return `rgba(0, 255, 0, ${alpha})`;
   }
 
   if (config.cl_crosshaircolor === '2') {
-    return 'rgb(255, 255, 0)';
+    return `rgba(255, 255, 0, ${alpha})`;
   }
 
   if (config.cl_crosshaircolor === '3') {
-    return 'rgb(0, 0, 255)';
+    return `rgba(0, 0, 255, ${alpha})`;
   }
 
   if (config.cl_crosshaircolor === '4') {
-    return 'rgb(0, 255, 255)';
+    return `rgba(0, 255, 255, ${alpha})`;
   }
 
   const r = parseInt(config.cl_crosshaircolor_r, 10);
   const g = parseInt(config.cl_crosshaircolor_g, 10);
   const b = parseInt(config.cl_crosshaircolor_b, 10);
-  return `rgb(${r}, ${g}, ${b})`;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
