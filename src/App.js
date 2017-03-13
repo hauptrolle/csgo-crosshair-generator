@@ -23,7 +23,7 @@ type Props = {
 
 const App = ({ config, setConfigAction, activeColor, loadPresetAction }: Props) => (
   <div className="app">
-    <h1>CSGO Crosshair Generator</h1>
+    <h1>CS:GO Crosshair Generator</h1>
     <div className="grid">
       <div className="col-50">
         <Toggle
