@@ -3,7 +3,7 @@
 import React from 'react';
 import { Layer, Rect, Stage, Group } from 'react-konva';
 
-import { getPreviewColor } from '../helpers/color';
+import { getPreviewColor } from '../../helpers/color';
 
 type Props = {
   config: Object

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Button from './Button';
+import Button from '../Button';
 
 type Props = {
   setConfigAction: Function,
@@ -11,7 +11,7 @@ type Props = {
 
 const CrosshairColor = ({ setConfigAction, activeColor } : Props) => (
   <div className="row-wrapper">
-    <div className="label">Color: </div>
+    <div className="label">Color:</div>
     <Button
       name="cl_crosshaircolor"
       label="Green"

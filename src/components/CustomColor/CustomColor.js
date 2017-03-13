@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import Slider from './Slider';
-import { getPreviewColor } from '../helpers/color';
+import Slider from '../Slider';
+import { getPreviewColor } from '../../helpers/color';
 
 type Props = {
   config: Object,

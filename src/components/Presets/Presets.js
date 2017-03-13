@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import * as presets from '../presets';
+import * as presets from '../../presets';
 
 type Props = {
   onClick: Function,
