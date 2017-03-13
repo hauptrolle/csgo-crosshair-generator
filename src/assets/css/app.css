@@ -106,6 +106,7 @@ body {
 }
 
 .crosshair-preview {
+  cursor: none;
   width: 100%;
   background: url(../images/dust2.jpg);
   background-size: cover;
