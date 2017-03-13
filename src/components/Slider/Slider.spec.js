@@ -12,7 +12,7 @@ describe('Slider', () => {
     onChange={clickMock}
     min={0}
     max={100}
-    defaultValue={5}
+    value={5}
   />);
 
   it('should render a RCSlider component', () => {

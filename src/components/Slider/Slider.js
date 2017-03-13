@@ -11,7 +11,7 @@ type Props = {
   min: number,
   max: number,
   step?: number,
-  defaultValue: string | number,
+  value: number,
   disabled?: boolean,
 };
 
@@ -20,7 +20,16 @@ const defaultProps = {
   disabled: false,
 };
 
-const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled } : Props) => (
+const Slider = ({
+  name,
+  label,
+  onChange,
+  min,
+  max,
+  step,
+  value,
+  disabled,
+} : Props) => (
   <div className="row-wrapper">
     <div className="label">{label}:</div>
     <RCSlider
@@ -28,8 +37,8 @@ const Slider = ({ name, label, onChange, min, max, step, defaultValue, disabled 
       min={min}
       max={max}
       step={step}
-      defaultValue={defaultValue}
-      onChange={value => onChange({ [name]: value.toString() })}
+      value={value}
+      onChange={v => onChange({ [name]: v.toString() })}
     />
   </div>
 );

@@ -12,7 +12,7 @@ import Toggle from './components/Toggle';
 import CrosshairColor from './components/CrosshairColor';
 import CustomColor from './components/CustomColor';
 import Presets from './components/Presets';
-import CrosshairPreview from './components/CrosshairPreview';
+// import CrosshairPreview from './components/CrosshairPreview';
 
 type Props = {
   config: Object,
@@ -39,7 +39,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props)
       onChange={setConfigAction}
       min={0}
       max={255}
-      defaultValue={parseInt(config.cl_crosshairalpha, 10)}
+      value={parseInt(config.cl_crosshairalpha, 10)}
     />
 
     <Slider
@@ -49,7 +49,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props)
       min={0}
       max={100}
       step={0.5}
-      defaultValue={parseInt(config.cl_crosshairthickness, 10)}
+      value={parseInt(config.cl_crosshairthickness, 10)}
     />
 
     <Slider
@@ -58,7 +58,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props)
       onChange={setConfigAction}
       min={0}
       max={100}
-      defaultValue={parseInt(config.cl_crosshairsize, 10)}
+      value={parseInt(config.cl_crosshairsize, 10)}
     />
 
     <Slider
@@ -67,7 +67,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props)
       onChange={setConfigAction}
       min={-100}
       max={100}
-      defaultValue={parseInt(config.cl_fixedcrosshairgap, 10)}
+      value={parseInt(config.cl_fixedcrosshairgap, 10)}
     />
 
     <Toggle
@@ -85,7 +85,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props)
       onChange={setConfigAction}
       min={0}
       max={3}
-      defaultValue={parseInt(config.cl_crosshair_outline, 10)}
+      value={parseInt(config.cl_crosshair_outline, 10)}
     />
 
     <Toggle
@@ -112,7 +112,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props)
       onClick={loadPresetAction}
     />
 
-    <CrosshairPreview config={config} />
+    {/* <CrosshairPreview config={config} /> */}
 
     {/* Debugging */}
     <pre>

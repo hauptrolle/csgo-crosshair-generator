@@ -5,8 +5,8 @@
 ## Features:
 - [x] Easy customize your crosshair
 - [ ] Crosshair displayed on CS:GO Background
-- [x] Choose preset from CS:GO Pro Players
-  - Add more presets (How to add (Pull request))
+- [x] Choose preset
+  - Add Presets from CS:GO Pro Players
 
 ### Roadmap (dev):
 - [ ] Add dockerfile for local developement
