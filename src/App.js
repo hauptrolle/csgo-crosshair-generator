@@ -12,7 +12,7 @@ import Toggle from './components/Toggle';
 import CrosshairColor from './components/CrosshairColor';
 import CustomColor from './components/CustomColor';
 import Presets from './components/Presets';
-// import CrosshairPreview from './components/CrosshairPreview';
+import CrosshairPreview from './components/CrosshairPreview';
 
 type Props = {
   config: Object,
@@ -112,7 +112,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction }: Props) 
       onClick={loadPresetAction}
     />
 
-    {/* <CrosshairPreview config={config} /> */}
+    <CrosshairPreview config={config} />
 
     {/* Debugging */}
     <pre>
