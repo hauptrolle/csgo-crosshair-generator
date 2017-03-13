@@ -38,6 +38,13 @@ body {
   flex: 0 0 100px;
 }
 
+.field-value {
+  flex: 1 0 50px;
+  margin-left: 10px;
+  border-radius: 3px;
+  border: 1px solid #d3d3d3;
+}
+
 .button {
   border: 0;
   cursor: pointer;

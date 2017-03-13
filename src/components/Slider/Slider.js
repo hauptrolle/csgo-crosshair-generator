@@ -32,7 +32,7 @@ const Slider = ({
   value,
   disabled,
   dots,
-} : Props) => (
+}: Props) => (
   <div className="row-wrapper">
     <div className="label">{label}:</div>
     <RCSlider
@@ -43,6 +43,15 @@ const Slider = ({
       value={value}
       dots={dots}
       onChange={v => onChange({ [name]: v.toString() })}
+    />
+    <input
+      className="field-value"
+      type="number"
+      disabled={disabled}
+      min={min}
+      max={max}
+      value={value}
+      onChange={e => onChange({ [name]: e.target.value.toString() })}
     />
   </div>
 );
