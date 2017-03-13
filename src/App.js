@@ -85,6 +85,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction }: Props) 
       onChange={setConfigAction}
       min={0}
       max={3}
+      dots
       value={parseInt(config.cl_crosshair_outline, 10)}
     />
 

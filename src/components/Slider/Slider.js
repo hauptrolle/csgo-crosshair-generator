@@ -13,11 +13,13 @@ type Props = {
   step?: number,
   value: number,
   disabled?: boolean,
+  dots?: boolean,
 };
 
 const defaultProps = {
   step: 1,
   disabled: false,
+  dots: false,
 };
 
 const Slider = ({
@@ -29,6 +31,7 @@ const Slider = ({
   step,
   value,
   disabled,
+  dots,
 } : Props) => (
   <div className="row-wrapper">
     <div className="label">{label}:</div>
@@ -38,6 +41,7 @@ const Slider = ({
       max={max}
       step={step}
       value={value}
+      dots={dots}
       onChange={v => onChange({ [name]: v.toString() })}
     />
   </div>
