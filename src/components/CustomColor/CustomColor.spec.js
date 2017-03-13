@@ -23,6 +23,6 @@ describe('CustomColor', () => {
   });
 
   it('should pass the defaultValue to the sliders', () => {
-    expect(component.find(Slider).at(0).prop('defaultValue')).toEqual(10);
+    expect(component.find(Slider).at(0).prop('value')).toEqual(10);
   });
 });
