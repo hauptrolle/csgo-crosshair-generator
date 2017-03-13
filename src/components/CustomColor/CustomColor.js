@@ -8,9 +8,10 @@ import { getPreviewColor } from '../../helpers/color';
 type Props = {
   config: Object,
   onChange: Function,
+  disabled: boolean,
 };
 
-const CustomColor = ({ config, onChange }: Props) => (
+const CustomColor = ({ config, onChange, disabled }: Props) => (
   <div className="custom-color">
     <div className="custom-color-slider">
       <Slider
@@ -19,6 +20,7 @@ const CustomColor = ({ config, onChange }: Props) => (
         onChange={onChange}
         min={0}
         max={255}
+        disabled={disabled}
         value={parseInt(config.cl_crosshaircolor_r, 10)}
       />
       <Slider
@@ -27,6 +29,7 @@ const CustomColor = ({ config, onChange }: Props) => (
         onChange={onChange}
         min={0}
         max={255}
+        disabled={disabled}
         value={parseInt(config.cl_crosshaircolor_g, 10)}
       />
       <Slider
@@ -35,6 +38,7 @@ const CustomColor = ({ config, onChange }: Props) => (
         onChange={onChange}
         min={0}
         max={255}
+        disabled={disabled}
         value={parseInt(config.cl_crosshaircolor_b, 10)}
       />
     </div>

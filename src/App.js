@@ -21,7 +21,7 @@ type Props = {
   activeColor: string,
 };
 
-const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props) => (
+const App = ({ config, setConfigAction, activeColor, loadPresetAction }: Props) => (
   <div className="app">
     <h1>CSGO Crosshair Generator</h1>
     <Toggle
@@ -101,12 +101,11 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction } : Props)
       activeColor={activeColor}
     />
 
-    {activeColor === '5' &&
-      <CustomColor
-        config={config}
-        onChange={setConfigAction}
-      />
-    }
+    <CustomColor
+      config={config}
+      onChange={setConfigAction}
+      disabled={activeColor !== '5'}
+    />
 
     <Presets
       onClick={loadPresetAction}
