@@ -1,17 +1,11 @@
 import React, { PropTypes } from 'react';
 
 import Slider from './Slider';
+import { getPreviewColor } from '../helpers/color';
 
 const propTypes = {
   config: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
-};
-
-const getPreviewColor = (config) => {
-  const r = parseInt(config.cl_crosshaircolor_r, 10);
-  const g = parseInt(config.cl_crosshaircolor_g, 10);
-  const b = parseInt(config.cl_crosshaircolor_b, 10);
-  return `rgb(${r}, ${g}, ${b})`;
 };
 
 const CustomColor = ({ config, onChange }) => (
