@@ -11,4 +11,4 @@
 ### Roadmap (dev):
 - [ ] Add dockerfile for local developement
 - [x] Add FlowType for type checking
-- [ ] Unit Tests with Jest and Enzyme
+- [x] Unit Tests with Jest and Enzyme
