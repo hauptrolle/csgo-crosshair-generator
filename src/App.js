@@ -30,6 +30,8 @@ type State = {
 class App extends Component {
   props: Props;
   state: State;
+  copyUrl: Function;
+  hideNotification: Function;
 
   constructor(props) {
     super(props);
