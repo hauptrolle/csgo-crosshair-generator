@@ -15,7 +15,7 @@ type State = {
   y: number,
 };
 
-const canvasWidth = 960;
+const canvasWidth = 1100;
 const canvasHeight = 400;
 
 class CrosshairPreview extends Component {

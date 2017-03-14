@@ -17,11 +17,19 @@ body {
 
 .grid {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .col-50 {
-  padding: 20px;
   flex: 1 0 50%;
+}
+
+.col-50:first-child {
+  padding-right: 10px;
+}
+
+.col-50:last-child {
+  padding-left: 10px;
 }
 
 .header {
@@ -63,6 +71,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 5px 0;
+  height: 40px;
 }
 
 .row-wrapper .label {
@@ -78,9 +87,9 @@ body {
 }
 
 .button {
+  color: #fff;
   border: 0;
   cursor: pointer;
-  padding: 5px 10px;
   margin-right: 10px;
   background: none;
   font-size: 100%;
@@ -88,59 +97,41 @@ body {
   border: 2px solid #d3d3d3;
 }
 
-.button:focus {
+.button:focus,
+.toggle:focus {
   outline: none;
 }
 
 .button-active {
-  border-color: #abe2fb;
-  color: #abe2fb;
+  border-color: #ffaa01;
+  color: #ffaa01;
+}
+
+.toggle-wrapper {
+  margin: 20px 0;
 }
 
 .toggle {
   position: relative;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  margin-right: 10px;
   background: none;
   font-size: 100%;
   border-radius: 5px;
   border: 2px solid #e74c3c;
-}
-
-.toggle:after,
-.toggle-active:after {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.toggle:after {
-  content: '✕';
-  font-size: 11px;
   color: #e74c3c;
-  top: 1px;
-  left: 0;
-}
-
-.toggle:focus {
-  outline: none;
+  flex: 1 0 33%;
 }
 
 .toggle-active {
   border-color: #2ecc71;
-}
-
-.toggle-active:after {
-  content: '✓';
-  font-size: 14px;
   color: #2ecc71;
-  top: -1px;
 }
 
 .custom-color {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .custom-color-slider {
@@ -148,7 +139,8 @@ body {
 }
 
 .custom-color-preview {
-  flex: 1 0 80px;
+  flex: 1 0 50px;
+  height: 50px;
   margin-left: 10px;
   border-radius: 3px;
 }
@@ -159,4 +151,20 @@ body {
   background: url('../images/dust2.jpg');
   background-size: cover;
   height: 400px;
+}
+
+.rc-slider-track {
+  background: #ffaa01!important;
+}
+
+.rc-slider-handle {
+  border-color: #ffaa01!important;
+}
+.rc-slider-rail {
+  background: #111217!important;
+}
+
+.rc-slider-disabled {
+  background: transparent!important;
+  opacity: .5;
 }

@@ -35,16 +35,33 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction }: Props) 
     </div>
 
     <div className="content">
+      <div className="toggle-wrapper">
+        <Toggle
+          name="cl_crosshairusealpha"
+          label="Use Alpha"
+          onClick={setConfigAction}
+          value={config.cl_crosshairusealpha}
+          isActive={config.cl_crosshairusealpha === '1'}
+        />
+
+        <Toggle
+          name="cl_crosshair_outline_draw"
+          label="Draw Outline"
+          onClick={setConfigAction}
+          value={config.cl_crosshair_outline_draw}
+          isActive={config.cl_crosshair_outline_draw === '1'}
+        />
+
+        <Toggle
+          name="cl_crosshairdot"
+          label="Show Dot"
+          onClick={setConfigAction}
+          value={config.cl_crosshairdot}
+          isActive={config.cl_crosshairdot === '1'}
+        />
+      </div>
       <div className="grid">
         <div className="col-50">
-          <Toggle
-            name="cl_crosshairusealpha"
-            label="Use Alpha"
-            onClick={setConfigAction}
-            value={config.cl_crosshairusealpha}
-            isActive={config.cl_crosshairusealpha === '1'}
-          />
-
           <Slider
             disabled={config.cl_crosshairusealpha === '0'}
             name="cl_crosshairalpha"
@@ -83,14 +100,6 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction }: Props) 
             value={parseInt(config.cl_fixedcrosshairgap, 10)}
           />
 
-          <Toggle
-            name="cl_crosshair_outline_draw"
-            label="Draw Outline"
-            onClick={setConfigAction}
-            value={config.cl_crosshair_outline_draw}
-            isActive={config.cl_crosshair_outline_draw === '1'}
-          />
-
           <Slider
             disabled={config.cl_crosshair_outline_draw === '0'}
             name="cl_crosshair_outline"
@@ -100,14 +109,6 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction }: Props) 
             max={3}
             dots
             value={parseInt(config.cl_crosshair_outline, 10)}
-          />
-
-          <Toggle
-            name="cl_crosshairdot"
-            label="Dot"
-            onClick={setConfigAction}
-            value={config.cl_crosshairdot}
-            isActive={config.cl_crosshairdot === '1'}
           />
         </div>
         <div className="col-50">
