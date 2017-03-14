@@ -64,7 +64,7 @@ class CrosshairPreview extends Component {
 
     // Thanks to https://github.com/kstdnr/csgocfgr_client/blob/master/app/components/crosshair-canvas.js
     let crosshairLength = parseInt(config.cl_crosshairsize, 10) * 2;
-    const crosshairWidth = parseInt(config.cl_crosshairthickness, 10) * 2;
+    const crosshairWidth = parseFloat(config.cl_crosshairthickness) * 2;
     const crosshairGap = parseInt(config.cl_fixedcrosshairgap, 10) + 4;
     const outlineThickness = parseInt(config.cl_crosshair_outline, 10);
 
