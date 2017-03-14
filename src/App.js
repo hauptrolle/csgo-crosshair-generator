@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import copy from 'copy-to-clipboard';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -28,7 +29,7 @@ const App = ({ config, setConfigAction, activeColor, loadPresetAction }: Props) 
         <div>
           CS:GO Crosshair Generator
         </div>
-        <button className="button" onClick={() => alert('Copy link to Clipboard')}>
+        <button className="button" onClick={() => copy(window.location.href)}>
           Share Crosshair
         </button>
       </div>

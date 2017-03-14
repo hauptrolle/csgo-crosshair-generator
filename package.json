@@ -46,6 +46,7 @@
     "whatwg-fetch": "2.0.2"
   },
   "dependencies": {
+    "copy-to-clipboard": "^3.0.5",
     "enzyme": "^2.7.1",
     "konva": "^1.4.0",
     "rc-slider": "^6.1.2",
