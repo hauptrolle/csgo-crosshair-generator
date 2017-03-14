@@ -7,6 +7,7 @@
 - [ ] Crosshair displayed on CS:GO Background
 - [x] Choose preset
   - Add Presets from CS:GO Pro Players
+- [ ] Share configuration with custom url
 
 ### Roadmap (dev):
 - [ ] Add dockerfile for local developement
