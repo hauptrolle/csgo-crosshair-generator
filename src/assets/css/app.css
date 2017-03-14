@@ -13,6 +13,8 @@ body {
   background: #23242d;
   background-size: cover;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
 .grid {
@@ -57,7 +59,6 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: .5px;
   background: #ffaa01;
 }
 
