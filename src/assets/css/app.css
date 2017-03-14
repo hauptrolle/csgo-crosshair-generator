@@ -9,12 +9,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: #333;
-}
-
-.app {
-  max-width: 1100px;
-  margin: 20px auto;
+  color: #fff;
+  background: #23242d;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
 }
 
 .grid {
@@ -24,6 +22,40 @@ body {
 .col-50 {
   padding: 20px;
   flex: 1 0 50%;
+}
+
+.header {
+  background: #2f303c;
+  width: 100%;
+  font-size: 25px;
+  padding: 20px  10px;
+  box-shadow: 0 0 15px rgba(0,0,0,.2);
+  color: #ececec;
+}
+
+.header-inner {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .button {
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .5px;
+  background: #ffaa01;
+}
+
+.content {
+  width: 1100px;
+  margin: 0 auto;
 }
 
 .row-wrapper {
@@ -124,7 +156,7 @@ body {
 .crosshair-preview {
   cursor: none;
   width: 100%;
-  background: url(../images/dust2.jpg);
+  background: url('../images/dust2.jpg');
   background-size: cover;
   height: 400px;
 }
