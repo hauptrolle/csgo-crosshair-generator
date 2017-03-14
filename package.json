@@ -54,6 +54,7 @@
     "react-dom": "^15.4.2",
     "react-konva": "^1.1.1",
     "react-notification": "^6.6.0",
+    "react-numeric-input": "^2.0.7",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.0"

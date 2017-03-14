@@ -84,11 +84,30 @@ body {
   flex: 0 0 100px;
 }
 
+.react-numeric-input {
+
+  margin-left: 10px!important;
+}
+
+.react-numeric-input b {
+  display: none!important /* Hide arrows */
+}
+
 .field-value {
-  flex: 1 0 50px;
-  margin-left: 10px;
-  border-radius: 3px;
-  border: 1px solid #d3d3d3;
+  width: 50px;
+  border-radius: 3px!important;
+  padding: 0!important;
+  margin: 0!important;
+  font-size: 14px;
+  padding: 3px 5px!important;
+  color: #fff;
+  background: #111217;
+  border: none!important;
+}
+
+.field-value:focus {
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+  outline: none;
 }
 
 .button {
@@ -183,3 +202,5 @@ body {
 .notification-bar {
   background: #ffaa01!important;
 }
+
+

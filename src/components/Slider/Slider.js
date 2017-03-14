@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import NumericInput from 'react-numeric-input';
 import RCSlider from 'rc-slider/lib/Slider';
 import 'rc-slider/assets/index.css';
 
@@ -44,14 +45,14 @@ const Slider = ({
       dots={dots}
       onChange={v => onChange({ [name]: v.toString() })}
     />
-    <input
+    <NumericInput
       className="field-value"
-      type="number"
-      disabled={disabled}
       min={min}
       max={max}
       value={value}
-      onChange={e => onChange({ [name]: e.target.value.toString() })}
+      disabled={disabled}
+      step={step}
+      onChange={valueAsString => onChange({ [name]: valueAsString })}
     />
   </div>
 );
