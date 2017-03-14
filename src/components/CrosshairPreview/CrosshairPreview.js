@@ -62,6 +62,16 @@ class CrosshairPreview extends Component {
     const { config } = this.props;
     const { x, y } = this.state;
 
+    // Thanks to https://github.com/kstdnr/csgocfgr_client/blob/master/app/components/crosshair-canvas.js
+    let crosshairLength = parseInt(config.cl_crosshairsize, 10) * 2;
+    const crosshairWidth = parseInt(config.cl_crosshairthickness, 10) * 2;
+    const crosshairGap = parseInt(config.cl_fixedcrosshairgap, 10) + 4;
+    const outlineThickness = parseInt(config.cl_crosshair_outline, 10);
+
+    if (parseInt(config.cl_crosshairsize, 10) > 2) {
+      crosshairLength = parseInt(crosshairLength, 10) + 1;
+    }
+
     return (
       <div
         className="crosshair-preview"
@@ -73,13 +83,79 @@ class CrosshairPreview extends Component {
           height={canvasHeight}
         >
           <Layer>
-            <Group
-              x={x}
-              y={y}
-            >
+            <Group>
+              {/* Draw outline */}
+              {config.cl_crosshair_outline_draw === '1' ?
+                <Group>
+                  <Rect
+                    x={(x + ((crosshairWidth / 2) + crosshairGap)) - outlineThickness}
+                    y={(y - (crosshairWidth / 2)) - outlineThickness}
+                    width={crosshairLength + (outlineThickness * 2)}
+                    height={crosshairWidth + (outlineThickness * 2)}
+                    fill={'#000000'}
+                  />
+                  <Rect
+                    x={(x - ((crosshairLength + (crosshairWidth / 2)) + crosshairGap)) - outlineThickness}
+                    y={(y - (crosshairWidth / 2)) - outlineThickness}
+                    width={crosshairLength + (outlineThickness * 2)}
+                    height={crosshairWidth + (outlineThickness * 2)}
+                    fill={'#000000'}
+                  />
+                  <Rect
+                    x={(x - (crosshairWidth / 2)) - outlineThickness}
+                    y={(y - ((crosshairLength + (crosshairWidth / 2) + crosshairGap))) - outlineThickness}
+                    width={crosshairWidth + (outlineThickness * 2)}
+                    height={crosshairLength + (outlineThickness * 2)}
+                    fill={'#000000'}
+                  />
+                  <Rect
+                    x={(x - (crosshairWidth / 2)) - outlineThickness}
+                    y={(y + ((crosshairWidth / 2) + crosshairGap)) - outlineThickness}
+                    width={crosshairWidth + (outlineThickness * 2)}
+                    height={crosshairLength + (outlineThickness * 2)}
+                    fill={'#000000'}
+                  />
+                </Group>
+              : undefined}
+
+              {/* Draw dot */}
+              {config.cl_crosshairdot === '1' ?
+                <Rect
+                  x={x - (crosshairWidth / 2)}
+                  y={y - (crosshairWidth / 2)}
+                  width={crosshairWidth}
+                  height={crosshairWidth}
+                  fill={getPreviewColor(config)}
+                />
+              : undefined}
+
+              {/* Draw crosshair */}
               <Rect
-                width={10}
-                height={50}
+                x={x + ((crosshairWidth / 2) + crosshairGap)}
+                y={y - (crosshairWidth / 2)}
+                width={crosshairLength}
+                height={crosshairWidth}
+                fill={getPreviewColor(config)}
+              />
+              <Rect
+                x={(x - ((crosshairLength + (crosshairWidth / 2)) + crosshairGap))}
+                y={y - (crosshairWidth / 2)}
+                width={crosshairLength}
+                height={crosshairWidth}
+                fill={getPreviewColor(config)}
+              />
+              <Rect
+                x={x - (crosshairWidth / 2)}
+                y={y - ((crosshairLength + (crosshairWidth / 2)) + crosshairGap)}
+                width={crosshairWidth}
+                height={crosshairLength}
+                fill={getPreviewColor(config)}
+              />
+              <Rect
+                x={x - (crosshairWidth / 2)}
+                y={y + ((crosshairWidth / 2) + crosshairGap)}
+                width={crosshairWidth}
+                height={crosshairLength}
                 fill={getPreviewColor(config)}
               />
             </Group>

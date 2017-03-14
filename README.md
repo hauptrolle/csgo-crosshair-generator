@@ -17,3 +17,4 @@
 ### Known issues:
 - [ ] The Gap slider should update cl_fixedcrosshairgap *and* cl_crosshairgap
  - Sliders should be able to update more than one value
+- [ ] cl_crosshairthickness slider can not set step tp 0.5
