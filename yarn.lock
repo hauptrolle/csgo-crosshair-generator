@@ -4457,6 +4457,10 @@ react-konva@^1.1.1:
     fbjs "^0.8.6"
     object-assign "^4.1.0"
 
+react-notification@^6.6.0:
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/react-notification/-/react-notification-6.6.0.tgz#791302e1522b0d2529daaab3b80839bcafd28fad"
+
 react-redux@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.3.tgz#86c3b68d56e74294a42e2a740ab66117ef6c019f"
