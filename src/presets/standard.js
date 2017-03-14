@@ -11,7 +11,7 @@ export const standard = {
     cl_crosshairsize: '5',
     cl_crosshairstyle: '2',
     cl_crosshairusealpha: '1',
-    cl_crosshairthickness: '1', // change to 0.5
+    cl_crosshairthickness: '0.5',
     cl_fixedcrosshairgap: '0',
     cl_crosshair_outline: '0',
     cl_crosshair_outline_draw: '0',
