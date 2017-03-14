@@ -63,7 +63,7 @@ class App extends Component {
         <div className="header">
           <div className="header-inner">
             <div>
-              CS:GO Crosshair Generator
+              <span>CS:GO</span> Crosshair Generator
         </div>
             <button className="button" onClick={() => this.copyUrl()}>
               Share Crosshair

@@ -43,6 +43,10 @@ body {
   color: #ececec;
 }
 
+.header span {
+  color: #ffaa01;
+}
+
 .header-inner {
   width: 1100px;
   margin: 0 auto;
