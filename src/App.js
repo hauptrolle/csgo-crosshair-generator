@@ -108,7 +108,7 @@ const App = ({
             min={0}
             max={100}
             step={0.5}
-            value={parseInt(config.cl_crosshairthickness, 10)}
+            value={parseFloat(config.cl_crosshairthickness)}
           />
 
           <Slider

@@ -17,4 +17,8 @@
 ### Known issues:
 - [ ] The Gap slider should update cl_fixedcrosshairgap *and* cl_crosshairgap
  - Sliders should be able to update more than one value
-- [ ] cl_crosshairthickness slider can not set step tp 0.5
+- [x] ~~cl_crosshairthickness slider can not set step 0.5~~
+- [ ] canvas: can not draw 0.5px lines
+
+
+Big shoutout to [@kstdnr](https://github.com/kstdnr) for the canvas crosshair calculation.

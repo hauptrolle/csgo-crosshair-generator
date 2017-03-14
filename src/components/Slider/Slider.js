@@ -47,6 +47,7 @@ const Slider = ({
     />
     <NumericInput
       className="field-value"
+      precision={step === 0.5 ? 1 : 0}
       min={min}
       max={max}
       value={value}
