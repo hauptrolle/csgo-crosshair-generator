@@ -12,3 +12,7 @@
 - [ ] Add dockerfile for local developement
 - [x] Add FlowType for type checking
 - [x] Unit Tests with Jest and Enzyme
+
+### Known issues:
+- [ ] The Gap slider should update cl_fixedcrosshairgap *and* cl_crosshairgap
+ - Sliders should be able to update more than one value
