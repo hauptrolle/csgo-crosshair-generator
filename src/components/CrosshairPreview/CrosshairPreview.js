@@ -21,6 +21,8 @@ const canvasHeight = 400;
 class CrosshairPreview extends Component {
   props: Props;
   state: State;
+  handleLayerClick: Function;
+  handleMousemove: Function;
 
   constructor(props: Props) {
     super(props);
