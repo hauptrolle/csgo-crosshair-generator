@@ -149,6 +149,8 @@ body {
   cursor: none;
   width: 100%;
   background: url('../images/dust2.jpg');
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
   background-size: cover;
   height: 400px;
 }
@@ -167,6 +169,10 @@ body {
 .rc-slider-disabled {
   background: transparent!important;
   opacity: .5;
+}
+
+.rc-slider-dot-active {
+  border-color: #ffaa01!important;
 }
 
 .notification-bar {
