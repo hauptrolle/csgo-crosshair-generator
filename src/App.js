@@ -28,9 +28,17 @@ type Props = {
   notificationIsVisible: boolean,
 };
 
+const getFormattedConfig = config => Object.keys(config).map(key => `${key} "${config[key]}"\n`).join('');
+const getConsoleConfig = config => Object.keys(config).map(key => `${key} "${config[key]}"`).join(';');
+
 const copyUrl = (text, cb) => {
   copy(window.location.href);
   cb(text);
+};
+
+const copyConfig = (notification, value, cb) => {
+  copy(value);
+  cb(notification);
 };
 
 const App = ({
@@ -58,9 +66,28 @@ const App = ({
         <div>
           <span>CS:GO</span> Crosshair Generator
         </div>
-        <button className="button" onClick={() => copyUrl('Share Url copied', setNotificationAction)}>
-            Share Crosshair
-        </button>
+        <div className="button-wrapper">
+          <button
+            className="button secondary"
+            onClick={() => copyUrl('Share Url copied', setNotificationAction)}
+          >
+              Share Crosshair
+          </button>
+
+          <button
+            className="button"
+            onClick={() => copyConfig('Config copied', getFormattedConfig(config), setNotificationAction)}
+          >
+              Copy for Config
+          </button>
+
+          <button
+            className="button"
+            onClick={() => copyConfig('Config copied', getConsoleConfig(config), setNotificationAction)}
+          >
+              Copy for Console
+          </button>
+        </div>
       </div>
     </div>
 

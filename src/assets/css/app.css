@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -64,6 +65,12 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   background: #ffaa01;
+}
+
+.header .secondary {
+  background: transparent;
+  color: #ffaa01;
+  border: 2px solid #ffaa01;
 }
 
 .content {
