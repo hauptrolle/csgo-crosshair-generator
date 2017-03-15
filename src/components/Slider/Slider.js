@@ -7,6 +7,7 @@ import 'rc-slider/assets/index.css';
 
 type Props = {
   name: string,
+  names?: Array<string>,
   label: string,
   onChange: Function,
   min: number,
@@ -18,13 +19,21 @@ type Props = {
 };
 
 const defaultProps = {
+  names: undefined,
   step: 1,
   disabled: false,
   dots: false,
 };
 
+// Update a single value
+const changeSingle = (name, value, cb) => cb({ [name]: value.toString() });
+
+// Update multiple values
+const changeBulk = (names, value, cb) => names.map(name => changeSingle(name, value, cb));
+
 const Slider = ({
   name,
+  names,
   label,
   onChange,
   min,
@@ -43,7 +52,7 @@ const Slider = ({
       step={step}
       value={value}
       dots={dots}
-      onChange={v => onChange({ [name]: v.toString() })}
+      onChange={v => (names ? changeBulk(names, v, onChange) : changeSingle(name, v, onChange))}
     />
     <NumericInput
       className="field-value"
@@ -53,7 +62,7 @@ const Slider = ({
       value={value}
       disabled={disabled}
       step={step}
-      onChange={valueAsString => onChange({ [name]: valueAsString })}
+      onChange={valueAsString => (names ? changeBulk(names, valueAsString, onChange) : changeSingle(name, valueAsString, onChange))}
     />
   </div>
 );

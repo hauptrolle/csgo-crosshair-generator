@@ -150,7 +150,7 @@ const App = ({
           />
 
           <Slider
-            name="cl_fixedcrosshairgap"
+            names={['cl_crosshairgap', 'cl_fixedcrosshairgap']}
             label="Gap"
             onChange={setConfigAction}
             min={-100}

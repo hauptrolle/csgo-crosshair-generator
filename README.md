@@ -16,8 +16,8 @@
 - [ ] Add [Github Buttons](https://buttons.github.io/)
 
 ### Known issues:
-- [ ] The Gap slider should update cl_fixedcrosshairgap **and** cl_crosshairgap
-  - Sliders should be able to update more than one value
+- [x] ~~The Gap slider should update cl_fixedcrosshairgap **and** cl_crosshairgap~
+  - [x] ~~Sliders should be able to update more than one value~~
 - [x] ~~cl_crosshairthickness slider can not set step 0.5~~
 - [x] ~~canvas: can not draw 0.5px lines~~
 
