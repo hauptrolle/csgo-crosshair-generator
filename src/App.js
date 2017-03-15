@@ -188,11 +188,6 @@ const App = ({
       </div>
 
       <CrosshairPreview config={config} />
-
-      {/* Debugging */}
-      <pre>
-        {JSON.stringify(config, null, 2)}
-      </pre>
     </div>
   </div>
   );
