@@ -4,6 +4,7 @@ export const CLEAR = 'csgocrosshairgen/notification/CLEAR';
 
 const defaultState = {
   message: '',
+  visible: false,
 };
 
 // Reducer
@@ -12,10 +13,14 @@ export default function reducer(state = defaultState, action) {
     case SET:
       return {
         message: action.payload,
+        visible: true,
       };
 
     case CLEAR:
-      return defaultState;
+      return {
+        ...state,
+        visible: false,
+      };
 
     default:
       return state;

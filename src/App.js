@@ -24,7 +24,8 @@ type Props = {
   setNotificationAction: Function,
   clearNotificationAction: Function,
   activeColor: string,
-  notification: string,
+  notificationText: string,
+  notificationIsVisible: boolean,
 };
 
 const copyUrl = (text, cb) => {
@@ -37,15 +38,16 @@ const App = ({
   setConfigAction,
   setNotificationAction,
   clearNotificationAction,
-  notification,
+  notificationText,
+  notificationIsVisible,
   activeColor,
   loadPresetAction,
 }: Props) => (
   <div className="app">
 
     <Notification
-      isActive={!!notification}
-      message={notification}
+      isActive={notificationIsVisible}
+      message={notificationText}
       dismissAfter={1500}
       onDismiss={clearNotificationAction}
       onClick={clearNotificationAction}
@@ -171,7 +173,8 @@ const App = ({
 const mapStateToProps = state => ({
   config: state.config,
   activeColor: state.config.cl_crosshaircolor,
-  notification: state.notification.message,
+  notificationText: state.notification.message,
+  notificationIsVisible: state.notification.visible,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
