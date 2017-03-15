@@ -118,6 +118,17 @@ class CrosshairPreview extends Component {
                 </Group>
               : undefined}
 
+              {/* Draw outline for dot */}
+              {config.cl_crosshairdot === '1' && config.cl_crosshair_outline_draw === '1' ?
+                <Rect
+                  x={(x - (crosshairWidth / 2)) - outlineThickness}
+                  y={(y - (crosshairWidth / 2)) - outlineThickness}
+                  width={crosshairWidth + (outlineThickness * 2)}
+                  height={crosshairWidth + (outlineThickness * 2)}
+                  fill={'#000000'}
+                />
+              : undefined}
+
               {/* Draw dot */}
               {config.cl_crosshairdot === '1' ?
                 <Rect
