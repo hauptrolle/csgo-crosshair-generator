@@ -13,6 +13,7 @@
 - [ ] Add dockerfile for local developement
 - [x] Add FlowType for type checking
 - [x] Unit Tests with Jest and Enzyme
+- [ ] Add [Github Buttons](https://buttons.github.io/)
 
 ### Known issues:
 - [ ] The Gap slider should update cl_fixedcrosshairgap **and** cl_crosshairgap
