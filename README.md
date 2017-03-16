@@ -7,7 +7,7 @@
 - [x] Crosshair displayed on CS:GO Map Background(s)
 - [x] Choose from presets
   - [ ] Add Presets from CS:GO Pro Players
-- [ ] Share your crosshair configuration with a custom url
+- [x] Share your crosshair configuration with a custom url
 
 ### Roadmap (dev):
 - [ ] Add dockerfile for local developement
@@ -20,5 +20,6 @@
   - [x] ~~Sliders should be able to update more than one value~~
 - [x] ~~cl_crosshairthickness slider can not set step 0.5~~
 - [x] ~~canvas: can not draw 0.5px lines~~
+- [ ] Performance when replacing url params could be better (maybe debounce?)
 
 Big shoutout to [@kstdnr](https://github.com/kstdnr) for the canvas crosshair calculation.
