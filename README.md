@@ -15,6 +15,7 @@
 - [x] Add FlowType for type checking
 - [x] Unit Tests with Jest and Enzyme
 - [ ] Add [Github Buttons](https://buttons.github.io/)
+- [ ] Remove redux-dev-tools on production build
 - [ ] Add styles for reach component instead of one big file
   - [ ] Add a preprocessor (sass or postcss)
   - [ ] Maybe css-modules?
