@@ -17,6 +17,7 @@
 - [ ] Add [Github Buttons](https://buttons.github.io/)
 
 ### Known issues:
+- [ ] Currently not working in other browsers than Google Chrome
 - [x] ~~The Gap slider should update cl_fixedcrosshairgap **and** cl_crosshairgap~
   - [x] ~~Sliders should be able to update more than one value~~
 - [x] ~~cl_crosshairthickness slider can not set step 0.5~~
