@@ -15,6 +15,11 @@
 - [x] Add FlowType for type checking
 - [x] Unit Tests with Jest and Enzyme
 - [ ] Add [Github Buttons](https://buttons.github.io/)
+- [ ] Add styles for reach component instead of one big file
+  - [ ] Add a preprocessor (sass or postcss)
+  - [ ] Maybe css-modules?
+  - [ ] Add stylelint
+  - [ ] dont use any **!important**
 
 ### Known issues:
 - [x] Currently not working in other browsers than Google Chrome
