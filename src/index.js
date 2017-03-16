@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -18,7 +20,8 @@ const middleware = routerMiddleware(history);
 
 const store = createStore(
   reducers,
-  compose(applyMiddleware(middleware), composeWithDevTools()),
+  composeWithDevTools(
+  applyMiddleware(...middleware))
 );
 
 ReactDOM.render(
