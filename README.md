@@ -23,7 +23,7 @@
   - [ ] dont use any **!important**
 
 ### Known issues:
-- [x] Currently not working in other browsers than Google Chrome
+- [x] ~~Currently not working in other browsers than Google Chrome~~
 - [x] ~~The Gap slider should update cl_fixedcrosshairgap **and** cl_crosshairgap~
   - [x] ~~Sliders should be able to update more than one value~~
 - [x] ~~cl_crosshairthickness slider can not set step 0.5~~
