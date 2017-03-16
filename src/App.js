@@ -45,7 +45,6 @@ class App extends Component {
 
   // Update url params when config prop changes
   componentWillReceiveProps(nextProps) {
-    // Update
     const config = this.props.config;
     const paramConfig = queryString.parse(nextProps.location.search);
     const params = queryString.stringify(config);
@@ -84,7 +83,7 @@ class App extends Component {
           <div className="header-inner">
             <div>
               <span>CS:GO</span> Crosshair Generator
-        </div>
+            </div>
             <div className="button-wrapper">
               <button
                 className="button secondary"
@@ -200,9 +199,7 @@ class App extends Component {
                 disabled={activeColor !== '5'}
               />
 
-              <Presets
-                onClick={loadPresetAction}
-              />
+              <Presets onClick={loadPresetAction} />
             </div>
           </div>
 
