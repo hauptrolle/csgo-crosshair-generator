@@ -5,7 +5,7 @@
 ## Features:
 - [x] Easy customize your CS:GO crosshair
 - [x] Crosshair displayed on CS:GO Map Background(s)
-  - [ ] Add different Map Backgrounds
+  - [x] Add different Map Backgrounds
 - [x] Choose from presets
   - [ ] Add Presets from CS:GO Pro Players
 - [x] Share your crosshair configuration with a custom url

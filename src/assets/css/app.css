@@ -75,7 +75,7 @@ body {
 
 .content {
   width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
 }
 
 .row-wrapper {
@@ -176,14 +176,52 @@ body {
   border-radius: 3px;
 }
 
+.crosshair-preview-wrapper .toggles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.crosshair-preview-wrapper .toggles button {
+  flex: 1;
+  color: #fff;
+  border: 0;
+  padding: 8px 15px;
+  font-size: 14px;
+  background: rgba(0,0,0,.2);
+  cursor: pointer;
+}
+
+.crosshair-preview-wrapper .toggles button.active {
+  background: #ffaa01;
+}
+
+.crosshair-preview-wrapper .toggles button:focus {
+  outline: none;
+}
+
 .crosshair-preview {
   cursor: none;
   width: 100%;
-  background: url('../images/dust2.jpg');
-  border-radius: 4px;
+  border-radius: 0 0 4px 4px;
   box-shadow: 0 0 10px rgba(0,0,0,.2);
-  background-size: cover;
   height: 400px;
+}
+
+.crosshair-preview.dust2 {
+  background: url('../images/dust2.jpg');
+  background-size: cover;
+}
+
+.crosshair-preview.cache {
+  background: url('../images/cache.jpg');
+  background-size: cover;
+  background-position: 0 60%;
+}
+
+.crosshair-preview.nuke {
+  background: url('../images/nuke.jpg');
+  background-size: cover;
+  background-position: 0 60%;
 }
 
 .rc-slider-track {

@@ -19,7 +19,7 @@ const middleware = routerMiddleware(history);
 const store = createStore(
   reducers,
   composeWithDevTools(
-  applyMiddleware(...middleware))
+    applyMiddleware(...middleware)),
 );
 
 ReactDOM.render(

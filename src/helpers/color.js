@@ -1,5 +1,11 @@
-export const getPreviewColor = (config) => {
-  let alpha = (config.cl_crosshairalpha / 255);
+// @flow
+
+/**
+ * Converts the values from the config object, to a rgba string
+ * @param {object} config
+ */
+export const getPreviewColor = (config : Object) : string => {
+  let alpha : number = (config.cl_crosshairalpha / 255);
 
   if (config.cl_crosshairusealpha === '0') {
     alpha = 1;
@@ -24,5 +30,6 @@ export const getPreviewColor = (config) => {
   const r = parseInt(config.cl_crosshaircolor_r, 10);
   const g = parseInt(config.cl_crosshaircolor_g, 10);
   const b = parseInt(config.cl_crosshaircolor_b, 10);
+
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
