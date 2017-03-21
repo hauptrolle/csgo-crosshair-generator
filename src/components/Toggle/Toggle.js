@@ -1,6 +1,9 @@
 // @flow
 
 import React from 'react';
+import CSSModules from 'react-css-modules';
+
+import styles from './toggle.css';
 
 type Props = {
   name: string,
@@ -12,11 +15,11 @@ type Props = {
 
 const Toggle = ({ name, label, value, onClick, isActive }: Props) => (
   <button
-    className={`toggle ${isActive ? 'toggle-active' : ''}`}
+    styleName={`root ${isActive ? 'active' : ''}`}
     onClick={() => onClick({ [name]: (value === '0' ? '1' : '0') })}
   >
     {label}
   </button>
 );
 
-export default Toggle;
+export default CSSModules(Toggle, styles, { allowMultiple: true });

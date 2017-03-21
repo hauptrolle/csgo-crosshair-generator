@@ -1,0 +1,40 @@
+@import "../../styles/_defaults.css";
+
+.root {
+  background: var(--color-header);
+  width: 100%;
+  font-size: 25px;
+  padding: 20px  10px;
+  box-shadow: 0 0 15px rgba(0,0,0,.2);
+  color: #ececec;
+
+  span {
+    color: var(--color-brand);
+  }
+
+  .inner {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .button {
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 10px;
+    background: var(--color-brand);
+  }
+
+  .secondary {
+    background: transparent;
+    color: var(--color-brand);
+    border: 2px solid var(--color-brand);
+  }
+}

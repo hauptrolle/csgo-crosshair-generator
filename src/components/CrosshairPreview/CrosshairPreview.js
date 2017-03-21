@@ -1,8 +1,10 @@
 // @flow
 
 import React, { Component } from 'react';
+import CSSModules from 'react-css-modules';
 import { Layer, Rect, Stage, Group } from 'react-konva';
 
+import styles from './preview.css';
 import { getPreviewColor } from '../../helpers/color';
 
 type Props = {
@@ -96,15 +98,15 @@ class CrosshairPreview extends Component {
     }
 
     return (
-      <div className="crosshair-preview-wrapper">
-        <div className="toggles">
-          <button className={this.state.background === 'dust2' ? 'active' : ''} onClick={() => this.handleBackgroundChange('dust2')}>de_dust_2</button>
-          <button className={this.state.background === 'nuke' ? 'active' : ''} onClick={() => this.handleBackgroundChange('nuke')}>de_nuke</button>
-          <button className={this.state.background === 'cache' ? 'active' : ''} onClick={() => this.handleBackgroundChange('cache')}>de_cache</button>
+      <div styleName="root">
+        <div styleName="toggles">
+          <button styleName={this.state.background === 'dust2' ? 'active' : ''} onClick={() => this.handleBackgroundChange('dust2')}>de_dust_2</button>
+          <button styleName={this.state.background === 'nuke' ? 'active' : ''} onClick={() => this.handleBackgroundChange('nuke')}>de_nuke</button>
+          <button styleName={this.state.background === 'cache' ? 'active' : ''} onClick={() => this.handleBackgroundChange('cache')}>de_cache</button>
         </div>
 
         <div
-          className={`crosshair-preview ${this.state.background}`}
+          styleName={`canvas-wrapper ${this.state.background}`}
           onClick={this.handleLayerClick}
           onMouseMove={this.handleMousemove}
         >
@@ -208,4 +210,4 @@ class CrosshairPreview extends Component {
   }
 }
 
-export default CrosshairPreview;
+export default CSSModules(CrosshairPreview, styles, { allowMultiple: true });

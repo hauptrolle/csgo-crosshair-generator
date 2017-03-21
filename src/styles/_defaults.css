@@ -1,0 +1,38 @@
+:root {
+  --color-brand: #ffaa01;
+  --color-header: #2f303c;
+  --color-body: #23242d;
+  --color-slider: #111217;
+
+
+  --font-default: 'Roboto', sans-serif;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 0;
+  height: 40px;
+}
+
+.label {
+  margin-right: 20px;
+  flex: 0 0 100px;
+}
+
+
+.button {
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  margin-right: 10px;
+  background: none;
+  font-size: 100%;
+  border-radius: 3px;
+  border: 2px solid #d3d3d3;
+
+  &:focus, &:active {
+    outline: none;
+  }
+}

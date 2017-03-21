@@ -1,6 +1,9 @@
 // @flow
 
 import React from 'react';
+import CSSModules from 'react-css-modules';
+
+import styles from './button.css';
 
 type Props = {
     label: string,
@@ -16,7 +19,7 @@ const defaultProps = {
 
 const Button = ({ label, name, value, onClick, isActive } : Props) => (
   <button
-    className={`button ${isActive ? 'button-active' : ''}`}
+    styleName={`root ${isActive ? 'active' : ''}`}
     onClick={() => onClick({ [name]: value })}
   >
     {label}
@@ -24,4 +27,4 @@ const Button = ({ label, name, value, onClick, isActive } : Props) => (
 );
 
 Button.defaultProps = defaultProps;
-export default Button;
+export default CSSModules(Button, styles, { allowMultiple: true });

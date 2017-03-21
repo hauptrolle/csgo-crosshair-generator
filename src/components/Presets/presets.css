@@ -1,0 +1,13 @@
+@import "../../styles/_defaults.css";
+
+.root {
+  composes: row from '../../styles/_defaults.css';
+}
+
+.button {
+  composes: button from '../../styles/_defaults.css';
+}
+
+.label {
+  composes: label from '../../styles/_defaults.css';
+}

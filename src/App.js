@@ -6,14 +6,15 @@ import { bindActionCreators } from 'redux';
 import { Notification } from 'react-notification';
 import queryString from 'query-string';
 import equal from 'deep-equal';
+import CSSmodules from 'react-css-modules';
 
-import './assets/css/app.css';
+import styles from './app.css';
 import { setConfig, loadPreset } from './ducks/config';
 import { setNotification, clearNotification } from './ducks/notification';
-import { copyNotification } from './helpers/copyNotification';
 
+import Header from './components/Header';
+import Toggles from './components/Toggles';
 import Slider from './components/Slider';
-import Toggle from './components/Toggle';
 import CrosshairColor from './components/CrosshairColor';
 import CustomColor from './components/CustomColor';
 import Presets from './components/Presets';
@@ -31,9 +32,6 @@ type Props = {
   location: Object,
   history: Object,
 };
-
-const getFormattedConfig = config => Object.keys(config).map(key => `${key} "${config[key]}"\n`).join('');
-const getConsoleConfig = config => Object.keys(config).map(key => `${key} "${config[key]}"`).join(';');
 
 class App extends Component {
   props: Props;
@@ -70,7 +68,7 @@ class App extends Component {
     } = this.props;
 
     return (
-      <div className="app">
+      <div>
         <Notification
           isActive={notificationIsVisible}
           message={notificationText}
@@ -79,65 +77,19 @@ class App extends Component {
           onClick={clearNotificationAction}
         />
 
-        <div className="header">
-          <div className="header-inner">
-            <div>
-              <span>CS:GO</span> Crosshair Generator
-            </div>
-            <div className="button-wrapper">
-              <button
-                className="button secondary"
-                onClick={() => copyNotification('Share Url copied', window.location.href, setNotificationAction)}
-              >
-                Share Crosshair
-          </button>
+        <Header
+          config={config}
+          setNotificationAction={setNotificationAction}
+        />
 
-              <button
-                className="button"
-                onClick={() => copyNotification('Config copied', getFormattedConfig(config), setNotificationAction)}
-              >
-                Copy for Config
-          </button>
+        <div styleName="content">
+          <Toggles
+            config={config}
+            onClick={setConfigAction}
+          />
 
-              <button
-                className="button"
-                onClick={() => copyNotification('Config copied', getConsoleConfig(config), setNotificationAction)}
-              >
-                Copy for Console
-          </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="content">
-          <div className="toggle-wrapper">
-            <Toggle
-              name="cl_crosshairusealpha"
-              label="Use Alpha"
-              onClick={setConfigAction}
-              value={config.cl_crosshairusealpha}
-              isActive={config.cl_crosshairusealpha === '1'}
-            />
-
-            <Toggle
-              name="cl_crosshair_outline_draw"
-              label="Draw Outline"
-              onClick={setConfigAction}
-              value={config.cl_crosshair_outline_draw}
-              isActive={config.cl_crosshair_outline_draw === '1'}
-            />
-
-            <Toggle
-              name="cl_crosshairdot"
-              label="Show Dot"
-              onClick={setConfigAction}
-              value={config.cl_crosshairdot}
-              isActive={config.cl_crosshairdot === '1'}
-            />
-          </div>
-
-          <div className="grid">
-            <div className="col-50">
+          <div styleName="grid">
+            <div styleName="col-50">
               <Slider
                 disabled={config.cl_crosshairusealpha === '0'}
                 name="cl_crosshairalpha"
@@ -187,7 +139,7 @@ class App extends Component {
                 value={parseInt(config.cl_crosshair_outline, 10)}
               />
             </div>
-            <div className="col-50">
+            <div styleName="col-50">
               <CrosshairColor
                 setConfigAction={setConfigAction}
                 activeColor={activeColor}
@@ -224,4 +176,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   clearNotificationAction: clearNotification,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(CSSmodules(App, styles, { allowMultiple: true }));

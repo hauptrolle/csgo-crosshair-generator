@@ -1,0 +1,54 @@
+@import "../../styles/_defaults.css";
+
+.root {
+
+}
+
+.toggles {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    flex: 1;
+    color: #fff;
+    border: 0;
+    padding: 8px 15px;
+    font-size: 14px;
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
+
+    &.active {
+      background: var(--color-brand);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+
+.canvas-wrapper {
+  cursor: none;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  height: 400px;
+
+  &.dust2 {
+    background: url('../../assets/images/dust2.jpg');
+    background-size: cover;
+  }
+
+  &.cache {
+    background: url('../../assets/images/cache.jpg');
+    background-size: cover;
+    background-position: 0 60%;
+  }
+
+  &.nuke {
+    background: url('../../assets/images/nuke.jpg');
+    background-size: cover;
+    background-position: 0 60%;
+  }
+}

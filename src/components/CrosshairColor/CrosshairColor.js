@@ -1,7 +1,9 @@
 // @flow
 
 import React from 'react';
+import CSSModules from 'react-css-modules';
 
+import styles from './crosshairColor.css';
 import Button from '../Button';
 
 type Props = {
@@ -10,8 +12,8 @@ type Props = {
 };
 
 const CrosshairColor = ({ setConfigAction, activeColor } : Props) => (
-  <div className="row-wrapper">
-    <div className="label">Color:</div>
+  <div styleName="root">
+    <div styleName="label">Color:</div>
     <Button
       name="cl_crosshaircolor"
       label="Green"
@@ -50,4 +52,4 @@ const CrosshairColor = ({ setConfigAction, activeColor } : Props) => (
   </div>
 );
 
-export default CrosshairColor;
+export default CSSModules(CrosshairColor, styles);

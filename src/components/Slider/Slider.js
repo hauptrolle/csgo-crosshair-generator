@@ -1,9 +1,12 @@
 // @flow
 
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import NumericInput from 'react-numeric-input';
 import RCSlider from 'rc-slider/lib/Slider';
+
 import 'rc-slider/assets/index.css';
+import styles from './slider.css';
 
 type Props = {
   name: string,
@@ -43,8 +46,8 @@ const Slider = ({
   disabled,
   dots,
 }: Props) => (
-  <div className="row-wrapper">
-    <div className="label">{label}:</div>
+  <div styleName="root">
+    <div styleName="label">{label}:</div>
     <RCSlider
       disabled={disabled}
       min={min}
@@ -55,7 +58,7 @@ const Slider = ({
       onChange={v => (names ? changeBulk(names, v, onChange) : changeSingle(name, v, onChange))}
     />
     <NumericInput
-      className="field-value"
+      styleName="value"
       precision={step === 0.5 ? 1 : 0}
       min={min}
       max={max}
@@ -68,4 +71,4 @@ const Slider = ({
 );
 
 Slider.defaultProps = defaultProps;
-export default Slider;
+export default CSSModules(Slider, styles);

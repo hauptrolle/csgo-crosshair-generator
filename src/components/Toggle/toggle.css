@@ -1,0 +1,16 @@
+.root {
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+  background: none;
+  font-size: 100%;
+  border-radius: 5px;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  flex: 1 0 33%;
+}
+
+.active {
+  border-color: #2ecc71;
+  color: #2ecc71;
+}
