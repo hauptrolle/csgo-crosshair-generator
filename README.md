@@ -11,16 +11,16 @@
 - [x] Share your crosshair configuration with a custom url
 
 ### Roadmap (dev):
-- [ ] Add dockerfile for local developement
+- [ ] Add dockerfile for local development
 - [x] Add FlowType for type checking
 - [x] Unit Tests with Jest and Enzyme
 - [ ] Add [Github Buttons](https://buttons.github.io/)
 - [ ] Remove redux-dev-tools on production build
-- [ ] Add styles for reach component instead of one big file
-  - [ ] Add a preprocessor (sass or postcss)
-  - [ ] Maybe css-modules?
+- [x] Add styles for reach component instead of one big file
+  - [x] Add a preprocessor (sass or postcss)
+  - [x] Maybe css-modules?
   - [ ] Add stylelint
-  - [ ] dont use any **!important**
+  - [x] dont use any **!important**
 
 ### Known issues:
 - [x] ~~Currently not working in other browsers than Google Chrome~~
