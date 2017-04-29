@@ -1,6 +1,8 @@
 # CS:GO Crosshair Generator
 
-> The only crosshair generator for Counter-Strike:Global Offensive you need! ✌️
+> The only [crosshair generator](https://https://csgo-crosshair.surge.sh.surge.sh) for Counter-Strike:Global Offensive you need! ✌️
+
+[![Screenshot](./screenshot.png)](https://https://csgo-crosshair.surge.sh.surge.sh/)
 
 ## Features:
 - [x] Easy customize your CS:GO crosshair
