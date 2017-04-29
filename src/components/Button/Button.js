@@ -1,16 +1,28 @@
 // @flow
 
 import React from 'react';
-import CSSModules from 'react-css-modules';
+import styled from 'styled-components';
 
-import styles from './button.css';
+const StyledButton = styled.button`
+  color: ${props => props.isActive ? props.theme.primary : '#fff'};
+  cursor: pointer;
+  margin-right: 10px;
+  background: none;
+  font-size: 100%;
+  border-radius: 3px;
+  border: 2px solid ${props => props.isActive ? props.theme.primary : '#d3d3d3'};
+
+  &:focus, &:active {
+    outline: none;
+  }
+`;
 
 type Props = {
     label: string,
     name: string,
     value: string,
     onClick: Function,
-    isActive: boolean,
+    isActive: Boolean,
 };
 
 const defaultProps = {
@@ -18,13 +30,10 @@ const defaultProps = {
 };
 
 const Button = ({ label, name, value, onClick, isActive } : Props) => (
-  <button
-    styleName={`root ${isActive ? 'active' : ''}`}
-    onClick={() => onClick({ [name]: value })}
-  >
+  <StyledButton onClick={() => onClick({ [name]: value })} isActive={isActive}>
     {label}
-  </button>
+  </StyledButton>
 );
 
 Button.defaultProps = defaultProps;
-export default CSSModules(Button, styles, { allowMultiple: true });
+export default Button;
