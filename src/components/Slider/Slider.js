@@ -4,8 +4,10 @@ import React from 'react';
 import NumericInput from 'react-numeric-input';
 import RCSlider from 'rc-slider/lib/Slider';
 
+// Overwrite slider and numeric-input styles
 import 'rc-slider/assets/index.css';
-import styles from './slider.css';
+import './slider.css';
+
 import Row from '../Row';
 import Label from '../Label';
 
@@ -59,7 +61,7 @@ const Slider = ({
       onChange={v => (names ? changeBulk(names, v, onChange) : changeSingle(name, v, onChange))}
     />
     <NumericInput
-      className={styles.value}
+      className="value"
       precision={step === 0.5 ? 1 : 0}
       min={min}
       max={max}

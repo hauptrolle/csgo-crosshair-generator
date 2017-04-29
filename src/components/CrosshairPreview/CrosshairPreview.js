@@ -6,6 +6,10 @@ import { Layer, Rect, Stage, Group } from 'react-konva';
 
 import { getPreviewColor } from '../../helpers/color';
 
+const dust2 = require('./images/dust2.jpg');
+const cache = require('./images/cache.jpg');
+const nuke = require('./images/nuke.jpg');
+
 type Props = {
   config: Object,
 };
@@ -43,18 +47,19 @@ const CanvasWrapper = styled.div`
   border-radius: 0 0 4px 4px;
   box-shadow: 0 0 10px rgba(0,0,0,.2);
   height: 400px;
-  background-size: cover;
 
   background: ${(props) => {
     switch (props.background) {
       case 'dust2':
-        return 'url("/assets/images/dust2.jpg")';
+        return `url(${dust2})`;
       case 'cache':
-        return 'url("/assets/images/cache.jpg")';
+        return `url(${cache})`;
       case 'nuke':
-        return 'url("/assets/images/nuke.jpg")';
+        return `url(${nuke})`;
     }
   }}
+
+  background-size: cover;
 
   background-position: ${(props) => {
     switch (props.background) {
