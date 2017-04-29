@@ -1,9 +1,10 @@
 // @flow
 
 import React from 'react';
+import styled from 'styled-components';
 
 import Slider from '../Slider';
-import { getPreviewColor } from '../../helpers/color';
+// import { getPreviewColor } from '../../helpers/color';
 
 type Props = {
   config: Object,
@@ -11,9 +12,20 @@ type Props = {
   disabled: boolean,
 };
 
+const CustomColorWrapper = styled.div``;
+
+const CustomColorSlider = styled.div``;
+
+// Todo: Add color preview again
+/* const ColorPreview = styled.div`
+  width: 100px;
+  height: 100px;
+  background: ${props => props.background};
+`; */
+
 const CustomColor = ({ config, onChange, disabled }: Props) => (
-  <div className="custom-color">
-    <div className="custom-color-slider">
+  <CustomColorWrapper>
+    <CustomColorSlider>
       <Slider
         name="cl_crosshaircolor_r"
         label="Red"
@@ -41,9 +53,11 @@ const CustomColor = ({ config, onChange, disabled }: Props) => (
         disabled={disabled}
         value={parseInt(config.cl_crosshaircolor_b, 10)}
       />
-    </div>
-    <div className="custom-color-preview" style={{ backgroundColor: getPreviewColor(config) }} />
-  </div>
+    </CustomColorSlider>
+    {/* <ColorPreview
+      background={getPreviewColor(config)}
+    /> */}
+  </CustomColorWrapper>
 );
 
 export default CustomColor;
