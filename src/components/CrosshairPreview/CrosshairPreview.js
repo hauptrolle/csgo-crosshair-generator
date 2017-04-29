@@ -1,10 +1,9 @@
 // @flow
 
 import React, { Component } from 'react';
-import CSSModules from 'react-css-modules';
+import styled from 'styled-components';
 import { Layer, Rect, Stage, Group } from 'react-konva';
 
-import styles from './preview.css';
 import { getPreviewColor } from '../../helpers/color';
 
 type Props = {
@@ -17,6 +16,58 @@ type State = {
   x: number,
   y: number,
 };
+
+const Toggles = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ToggleButton = styled.button`
+  flex: 1;
+  color: #fff;
+  border: 0;
+  padding: 8px 15px;
+  font-size: 14px;
+  background: ${props => props.active ? props.theme.primary : 'rgba(0,0,0,.2)'};
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+/* eslint-disable */
+const CanvasWrapper = styled.div`
+  cursor: none;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  height: 400px;
+  background-size: cover;
+
+  background: ${(props) => {
+    switch (props.background) {
+      case 'dust2':
+        return 'url("/assets/images/dust2.jpg")';
+      case 'cache':
+        return 'url("/assets/images/cache.jpg")';
+      case 'nuke':
+        return 'url("/assets/images/nuke.jpg")';
+    }
+  }}
+
+  background-position: ${(props) => {
+    switch (props.background) {
+      case 'cache':
+      case 'nuke':
+        return '0 60%';
+      default:
+        return '0 0';
+    }
+  }}
+
+`;
+/* eslint-enable */
 
 const canvasWidth = 1100;
 const canvasHeight = 400;
@@ -98,15 +149,21 @@ class CrosshairPreview extends Component {
     }
 
     return (
-      <div styleName="root">
-        <div styleName="toggles">
-          <button styleName={this.state.background === 'dust2' ? 'active' : ''} onClick={() => this.handleBackgroundChange('dust2')}>de_dust_2</button>
-          <button styleName={this.state.background === 'nuke' ? 'active' : ''} onClick={() => this.handleBackgroundChange('nuke')}>de_nuke</button>
-          <button styleName={this.state.background === 'cache' ? 'active' : ''} onClick={() => this.handleBackgroundChange('cache')}>de_cache</button>
-        </div>
+      <div>
+        <Toggles>
+          <ToggleButton active={this.state.background === 'dust2' ? 'active' : ''} onClick={() => this.handleBackgroundChange('dust2')}>
+            de_dust_2
+          </ToggleButton>
+          <ToggleButton active={this.state.background === 'nuke' ? 'active' : ''} onClick={() => this.handleBackgroundChange('nuke')}>
+            de_nuke
+          </ToggleButton>
+          <ToggleButton active={this.state.background === 'cache' ? 'active' : ''} onClick={() => this.handleBackgroundChange('cache')}>
+            de_cache
+          </ToggleButton>
+        </Toggles>
 
-        <div
-          styleName={`canvas-wrapper ${this.state.background}`}
+        <CanvasWrapper
+          background={this.state.background}
           onClick={this.handleLayerClick}
           onMouseMove={this.handleMousemove}
         >
@@ -204,10 +261,10 @@ class CrosshairPreview extends Component {
               </Group>
             </Layer>
           </Stage>
-        </div>
+        </CanvasWrapper>
       </div>
     );
   }
 }
 
-export default CSSModules(CrosshairPreview, styles, { allowMultiple: true });
+export default CrosshairPreview;

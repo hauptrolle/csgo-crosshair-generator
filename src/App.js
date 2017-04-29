@@ -6,9 +6,7 @@ import { bindActionCreators } from 'redux';
 import { Notification } from 'react-notification';
 import queryString from 'query-string';
 import equal from 'deep-equal';
-import CSSmodules from 'react-css-modules';
 
-import styles from './app.css';
 import { setConfig, loadPreset } from './ducks/config';
 import { setNotification, clearNotification } from './ducks/notification';
 
@@ -82,14 +80,14 @@ class App extends Component {
           setNotificationAction={setNotificationAction}
         />
 
-        <div styleName="content">
+        <div className="content">
           <Toggles
             config={config}
             onClick={setConfigAction}
           />
 
-          <div styleName="grid">
-            <div styleName="col-50">
+          <div className="grid">
+            <div className="col-50">
               <Slider
                 disabled={config.cl_crosshairusealpha === '0'}
                 name="cl_crosshairalpha"
@@ -139,7 +137,7 @@ class App extends Component {
                 value={parseInt(config.cl_crosshair_outline, 10)}
               />
             </div>
-            <div styleName="col-50">
+            <div className="col-50">
               <CrosshairColor
                 setConfigAction={setConfigAction}
                 activeColor={activeColor}
@@ -176,4 +174,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   clearNotificationAction: clearNotification,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(CSSmodules(App, styles, { allowMultiple: true }));
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -152,7 +152,7 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:5]!postcss',
+          'css!postcss',
           extractTextPluginOptions,
         ),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.

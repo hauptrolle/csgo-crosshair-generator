@@ -1,10 +1,11 @@
 // @flow
 
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import * as presets from '../../presets';
 
-import styles from './presets.css';
+import Row from '../Row';
+import Label from '../Label';
+import Button from '../Button';
 
 type Props = {
   onClick: Function,
@@ -13,22 +14,20 @@ type Props = {
 const presetArray = Object.keys(presets).map(p => presets[p]);
 
 const Presets = ({ onClick } : Props) => (
-  <div styleName="root">
-    <div styleName="label">Load Preset:</div>
+  <Row>
+    <Label label="Load Preset:" />
     <div>
       {
         presetArray.map(preset => (
-          <button
+          <Button
             key={preset.name}
-            styleName="button"
             onClick={() => onClick(preset.config)}
-          >
-            {preset.name}
-          </button>
+            label={preset.name}
+          />
         ))
       }
     </div>
-  </div>
+  </Row>
 );
 
-export default CSSModules(Presets, styles);
+export default Presets;

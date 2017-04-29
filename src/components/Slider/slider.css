@@ -1,11 +1,6 @@
-@import "../../styles/_defaults.css";
-
-.root {
-  composes: row from '../../styles/_defaults.css';
-}
-
-.label {
-  composes: label from '../../styles/_defaults.css';
+:root {
+  --color-brand: #ffaa01;
+  --color-slider: #111217;
 }
 
 .value {
@@ -16,40 +11,38 @@
   font-size: 14px;
   padding: 3px 5px!important;
   color: #fff;
-  background: var(--color-slider);
+  background: #111217;
   border: none!important;
 }
 
-:global {
-  .react-numeric-input {
-    margin-left: 10px;
-  }
+.react-numeric-input {
+  margin-left: 10px;
+}
 
-  .react-numeric-input b {
-    display: none;
-  }
+.react-numeric-input b {
+  display: none;
+}
 
-  .rc-slider-track {
-    background: var(--color-brand);
-  }
+.rc-slider-track {
+  background: var(--color-brand);
+}
 
-  .rc-slider-handle {
-    border-color: var(--color-brand);
-  }
-  .rc-slider-rail {
-    background: var(--color-slider);
-  }
+.rc-slider-handle {
+  border-color: var(--color-brand);
+}
+.rc-slider-rail {
+  background: var(--color-slider);
+}
 
-  .rc-slider-disabled {
-    background: transparent;
-    opacity: .5;
-  }
+.rc-slider-disabled {
+  background: transparent;
+  opacity: .5;
+}
 
-  .rc-slider-dot-active {
-    border-color: var(--color-brand);
-  }
+.rc-slider-dot-active {
+  border-color: var(--color-brand);
+}
 
-  .notification-bar {
-    background: var(--color-brand);
-  }
+.notification-bar {
+  background: var(--color-brand);
 }
