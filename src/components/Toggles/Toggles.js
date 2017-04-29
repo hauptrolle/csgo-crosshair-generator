@@ -1,16 +1,19 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import Toggle from '../Toggle';
+import styled from 'styled-components';
 
-import styles from './toggles.css';
+import Toggle from '../Toggle';
 
 type Props = {
   config: Object,
   onClick: Function,
 };
 
+const TogglesWrapper = styled.div`
+  margin: 20px 0;
+`;
+
 const Toggles = ({ config, onClick }: Props) => (
-  <div styleName="root">
+  <TogglesWrapper>
     <Toggle
       name="cl_crosshairusealpha"
       label="Use Alpha"
@@ -34,7 +37,7 @@ const Toggles = ({ config, onClick }: Props) => (
       value={config.cl_crosshairdot}
       isActive={config.cl_crosshairdot === '1'}
     />
-  </div>
+  </TogglesWrapper>
 );
 
-export default CSSModules(Toggles, styles, { allowMultiple: true });
+export default Toggles;

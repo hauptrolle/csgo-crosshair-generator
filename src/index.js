@@ -25,6 +25,8 @@ const store = createStore(
 
 const theme = {
   primary: '#ffaa01',
+  error: '#e74c3c',
+  success: '#2ecc71',
 };
 
 ReactDOM.render(
