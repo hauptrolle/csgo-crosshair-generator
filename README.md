@@ -18,7 +18,8 @@
 - [ ] Remove redux-dev-tools on production build
 - [x] Add styles for reach component instead of one big file
   - [x] Add a preprocessor (sass or postcss)
-  - [x] Maybe css-modules?
+  - [x] ~~Maybe css-modules?~
+  - [x] Styled Components !
   - [ ] Add stylelint
   - [x] dont use any **!important**
 
